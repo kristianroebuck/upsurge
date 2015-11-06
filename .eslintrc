@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "rules": {
+    "block-spacing": [2],
+    "brace-style": [2, "stroustrup"],
+    "camelcase": [2, {"properties": "always"}],
+    "comma-dangle": [2, "never"],
+    "comma-spacing": [2, {"before": false, "after": true}],
+    "comma-style": [2, "last"],
+    "computed-property-spacing": [2, "never"],
+    "eol-last": [2],
+    "eqeqeq": [2, "smart"],
+    "indent": [2, 2],
+    "linebreak-style": [2, "unix"],
+    "max-nested-callbacks": [2, 2],
+    "no-array-constructor": [2],
+    "no-extra-boolean-cast": [2],
+    "no-extra-semi": [2],
+    "no-inline-comments": [2],
+    "no-lonely-if": [2],
+    "no-floating-decimal": [2],
+    "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+    "no-multi-spaces": [2],
+    "no-new-wrappers": [2],
+    "no-redeclare": [2],
+    "no-spaced-func": [2],
+    "no-trailing-spaces": [2, {"skipBlankLines": true }],
+    "no-underscore-dangle": [2],
+    "object-curly-spacing": [2, "always"],
+    "quotes": [2, "single"],
+    "radix": [2],
+    "semi": [2, "always"],
+    "space-before-keywords": [2, "always"],
+    "space-in-parens": [2, "never"],
+    "yoda": 2
+  }
+}
