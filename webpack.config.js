@@ -2,19 +2,25 @@ const webpack = require('webpack');
 
 
 module.exports = {
-  devtool: 'eval',
-  entry: 'src/index.js',
+  entry: './src/index.js',
   output: {
     path: __dirname,
-    name: 'index.js'
+    filename: 'dist/index.js'
   },
-  target: 'web',
   module: {
     loaders: [{
-      test: /\.js/,
+      test: /\.js$/,
       exclude: /node_modules/,
-      loaders: ['babel!eslint'],
-      include: ['src', 'test']
+      loader: 'babel'
     }]
-  }
+  },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true,
+        warnings: false
+      }
+    })
+  ]
 };

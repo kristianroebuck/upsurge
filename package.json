@@ -1,36 +1,40 @@
 {
-  "name": "uploadr",
+  "name": "upsurge",
   "version": "0.0.1",
   "description": "Modern S3 file uploader",
   "license": "ISC",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "lint": "eslint src/**",
-    "server": "babel-node src/server/server.js",
-    "test": "babel-tape-runner test/** | tap-dot"
+    "test": "babel-tape-runner test/** test/**/** | tap-dot",
+    "test:cov": "babel-node $(npm bin)/isparta cover npm t"
   },
-  "author": {
-    "name": "Kristian Roebuck",
-    "email": "k@roeb.uk",
-    "url": "roeb.uk"
-  },
+  "keywords": [
+    "s3",
+    "upload",
+    "multipart"
+  ],
+  "author": "Kristian Roebuck <k@roeb.uk> (https://roeb.uk)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kristianroebuck/uploadr.git"
+    "url": "git+https://github.com/kristianroebuck/upsurge.git"
   },
   "dependencies": {
+    "redux": "^3.0.4"
+  },
+  "devDependencies": {
     "babel": "^6.0.15",
     "babel-cli": "^6.1.2",
     "babel-core": "^6.1.2",
-    "babel-loader": "^6.0.1",
+    "babel-loader": "^6.1.0",
     "babel-preset-es2015": "^6.1.2",
     "babel-tape-runner": "^1.3.0",
     "eslint": "^1.8.0",
-    "express": "^4.13.3",
-    "redux": "^3.0.4",
-    "supertest": "^1.1.0",
+    "eslint-plugin-no-implicit-side-effects": "^1.0.0",
+    "isparta": "^3.5.3",
     "tap-dot": "^1.0.0",
     "tape": "^4.2.2",
-    "webpack": "^1.12.3"
+    "webpack": "^1.12.4"
   }
 }
