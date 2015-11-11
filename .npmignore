@@ -1,5 +1,7 @@
 *.log
+/.*/
 /.editorconfig
+/.eslintrc
 /.gitignore
 /.npmignore
 /.nvmrc
