@@ -1,7 +1,5 @@
 *.log
-/.*/
 /.editorconfig
-/!.babelrc
 /.gitignore
 /.npmignore
 /.nvmrc
