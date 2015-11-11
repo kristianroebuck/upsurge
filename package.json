@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Modern S3 file uploader",
   "license": "ISC",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "lint": "eslint src test",
