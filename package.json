@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "lint": "eslint src test",
-    "postinstall": "npm run build",
+    "postinstall": "babel src --out-dir lib",
     "test": "babel-tape-runner test/** test/**/** | tap-dot",
     "test:cov": "babel-node $(npm bin)/isparta cover npm t"
   },
@@ -22,19 +22,19 @@
     "url": "git+https://github.com/kristianroebuck/upsurge.git"
   },
   "dependencies": {
+    "redux": "^3.0.4"
+  },
+  "devDependencies": {
     "babel": "^6.0.15",
+    "babel-cli": "^6.1.2",
     "babel-core": "^6.1.2",
     "babel-loader": "^6.1.0",
     "babel-preset-es2015": "^6.1.2",
-    "redux": "^3.0.4",
-    "webpack": "^1.12.4"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.1.2",
     "babel-tape-runner": "^1.3.0",
     "eslint": "^1.8.0",
     "isparta": "^3.5.3",
     "tap-dot": "^1.0.0",
-    "tape": "^4.2.2"
+    "tape": "^4.2.2",
+    "webpack": "^1.12.4"
   }
 }
