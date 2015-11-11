@@ -14,9 +14,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "upsurge": "github:kristianroebuck/upsurge"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.1.4",
     "babel-tape-runner": "^1.3.0",

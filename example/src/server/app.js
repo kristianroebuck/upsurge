@@ -1,4 +1,3 @@
-/*eslint no-implicit-side-effects/no-implicit-side-effects:0*/
 import express from 'express';
 import bodyParser from 'body-parser';
 import {
