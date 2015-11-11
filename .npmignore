@@ -1,0 +1,10 @@
+*.log
+/.*/
+/.editorconfig
+/.gitignore
+/.npmignore
+/.nvmrc
+/.travis.yml
+/example/
+/media/
+/test/
