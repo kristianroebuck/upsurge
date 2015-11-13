@@ -1,0 +1,22 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  color: #173149;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 9rem;
+  margin: 0;
+  letter-spacing: 0.5rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 30rem;
+}

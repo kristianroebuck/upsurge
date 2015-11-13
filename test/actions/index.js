@@ -5,12 +5,14 @@ import * as actions from '../../src/actions';
 
 test('addFile action returns an object containing an action type and a file', assert => {
   const file = 'my-file.mp4';
+  const fileName = 'my-file.mp4';
   const expectedAction = {
     type: types.ADD_FILE,
-    file
+    file,
+    fileName
   };
 
-  assert.deepEqual(actions.addFile(file), expectedAction);
+  assert.deepEqual(actions.addFile(file, fileName), expectedAction);
   assert.end();
 });
 

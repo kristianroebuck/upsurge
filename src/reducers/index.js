@@ -1,13 +1,9 @@
-import * as actions from '../actions';
-import * as types from '../constants/action-types';
+import { combineReducers } from 'redux';
+import file from './file';
+import upsurge from './upsurge';
 
 
-export default function upsurgeReducer(state = {}, action) {
-  switch (action.type) {
-    case types.ADD_FILE:
-      console.log('adding file');
-      return state;
-    default:
-      return state
-  }
-}
+export default combineReducers({
+  file,
+  upsurge
+});

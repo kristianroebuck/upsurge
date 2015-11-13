@@ -1,10 +1,11 @@
 import * as types from '../constants/action-types';
 
 
-export function addFile(file) {
+export function addFile(file, fileName) {
   return {
     type: types.ADD_FILE,
-    file
+    file,
+    fileName
   };
 }
 

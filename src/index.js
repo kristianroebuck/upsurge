@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import * as actions from './actions';
-import upsurgeReducer from './reducers';
+import reducers from './reducers';
 
 
 const upsurge = ({
@@ -15,7 +15,6 @@ const upsurge = ({
     return false;
   }
 
-  const store = createStore(upsurgeReducer);
 
   function addFile({
       fileName = undefined,
@@ -27,9 +26,11 @@ const upsurge = ({
       return false;
     }
 
-    return store.dispatch(actions.addFile('hello'));
+    return store.dispatch(actions.addFile('hello', 'hello'));
   }
 
+  const store = createStore(reducers);
+  // store.dispatch(actions.INITIATE({}))
 
   return {
     addFile
