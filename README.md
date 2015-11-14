@@ -7,10 +7,8 @@
 
 ### Installation
 
-To install the stable version:
-
 ```
-npm install --save upsurge
+npm install --save kristianroebuck/upsurge
 ```
 
 This assumes that you’re using [npm](https://www.npmjs.com/) package manager with a module bundler like [Webpack](http://webpack.github.io) to consume [CommonJS modules](http://webpack.github.io/docs/commonjs.html) or [ES2015 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).

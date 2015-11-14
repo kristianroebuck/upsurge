@@ -1,37 +1,29 @@
-export default function request(url) {
+export default function request(args) {
 
-  const core = {
-    ajax(method, url, args) {
-      return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, reject) {
 
-        const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
 
-        xhr.open(method, url);
-        xhr.send();
+    xhr.open(args.method, args.url);
 
-        xhr.onload = () => {
-          if (this.status >= 200 && this.status < 300) {
-            resolve(xhr.response);
-          } else {
-            reject(xhr.status)
-          }
-        };
-
-        xhr.onerror = () => {
-          reject(xhr.status)
-        };
-
-      });
+    if (args.headers) {
+      Object.keys(args.headers)
+        .forEach(key => xhr.setRequestHeader(key, args.headers[key]));
     }
-  };
 
-  return {
-    get() {
-      return core.ajax('GET', url);
-    },
-    post(args) {
-      return core.ajax('POST', url, args);
-    }
-  };
+    xhr.send();
 
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.response);
+      } else {
+        reject(xhr.status)
+      }
+    };
+
+    xhr.onerror = () => {
+      reject(xhr.status)
+    };
+
+  });
 }
