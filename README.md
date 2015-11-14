@@ -11,4 +11,4 @@
 npm install --save kristianroebuck/upsurge
 ```
 
-This assumes that you’re using the [npm](https://www.npmjs.com/) with a module bundler like [Webpack](http://webpack.github.io) to consume [ES2015 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+This assumes that you’re using [npm](https://www.npmjs.com/) with a module bundler like [Webpack](http://webpack.github.io) to consume [ES2015 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
