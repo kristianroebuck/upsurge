@@ -30,7 +30,9 @@ const upsurge = ({
   }
 
   const store = createStore(reducers);
-  // store.dispatch(actions.INITIATE({}))
+  store.dispatch(actions.initiate({
+
+  }));
 
   return {
     addFile

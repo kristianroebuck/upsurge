@@ -11,10 +11,10 @@ export default function file(state = [], action) {
     case types.ADD_FILE:
       console.log('adding file', action.file, action.fileName);
       return [{
-          fileName: action.fileName,
-          file: action.file
-        }, ...state];
+        fileName: action.fileName,
+        file: action.file
+      }, ...state];
     default:
-      return state
+      return state;
   }
 }

@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "start": "watch 'npm t && npm run lint' ./src ./test",
     "lint": "eslint src test",
     "postinstall": "babel src --out-dir lib",
     "update": "cd example && npm un upsurge && npm i kristianroebuck/upsurge",
@@ -36,6 +37,7 @@
     "isparta": "^3.5.3",
     "tap-dot": "^1.0.0",
     "tape": "^4.2.2",
+    "watch": "^0.16.0",
     "webpack": "^1.12.4"
   }
 }

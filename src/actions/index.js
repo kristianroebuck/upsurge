@@ -21,3 +21,10 @@ export function cancelUpload(id) {
     id
   };
 }
+
+export function initiate(options) {
+  return {
+    type: types.INITIATE,
+    options
+  };
+}
