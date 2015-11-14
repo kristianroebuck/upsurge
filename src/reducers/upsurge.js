@@ -6,7 +6,9 @@ export default function upsurge(state = {}, action) {
   switch (action.type) {
     case types.INITIATE:
       return {
-        
+        signUrl: action.signUrl,
+        bucketName: action.bucketName,
+        awsAccessId: action.awsAccessId
       };
 
     default:

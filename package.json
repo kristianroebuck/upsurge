@@ -10,7 +10,7 @@
     "postinstall": "babel src --out-dir lib",
     "update": "cd example && npm un upsurge && npm i kristianroebuck/upsurge",
     "test": "babel-tape-runner test/** test/**/** | tap-dot",
-    "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/babel-tape-runner test/** test/**/**"
+    "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/babel-tape-runner test/** test/**/** test/**/**.js"
   },
   "keywords": [
     "s3",
