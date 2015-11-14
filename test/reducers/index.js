@@ -33,20 +33,20 @@ test('UNKNOWN type returns the same state', assert => {
 // });
 
 // Upsurge tests
-test('When an unknown type passed to the upsurge reducer the same state is returned ', assert => {
-  const expected = {
-
+test('When an unknown type passed to the upsurge reducer the same state is returned', assert => {
+  const state = {
+    random: 'information'
   };
   const action = {
     type: types.UNKNOWN
   };
-  const actual = upsurge(expected, action);
+  const actual = upsurge(state, action);
 
-  assert.deepEqual(actual, expected);
+  assert.deepEqual(actual, state);
   assert.end();
 });
 
-test('INITIATE action ', assert => {
+test('upsurge reducer INITIATE action', assert => {
   const action = {
     type: types.INITIATE,
     signUrl: '/sign-auth',
