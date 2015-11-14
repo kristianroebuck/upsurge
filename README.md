@@ -12,3 +12,20 @@ npm install --save kristianroebuck/upsurge
 ```
 
 This assumes that you’re using [npm](https://www.npmjs.com/) with a module bundler like [Webpack](http://webpack.github.io) to consume [ES2015 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+
+
+### Example
+
+There's a full working [example](https://github.com/kristianroebuck/upsurge/tree/master/example) included in the repo. Just bring your own S3 bucket and credentials.
+
+ ```
+ npm install
+ npm start
+ open 127.0.0.1:3000
+ ```
+
+
+### Change Log
+
+This project adheres to [Semantic Versioning](http://semver.org/).  
+Every release, along with the migration instructions, is documented on the Github [Releases](https://github.com/kristianroebuck/upsurge/releases) page.

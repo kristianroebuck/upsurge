@@ -9,7 +9,7 @@
   },
   "scripts": {
     "server": "babel-node src/server/server.js",
-    "start": "webpack-dev-server --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js && npm run server",
     "test": "babel-tape-runner test/**/*.js | tap-dot"
   },
   "author": "",
