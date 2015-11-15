@@ -9,7 +9,9 @@ import {
 const app = express();
 const jsonParser = bodyParser.json();
 
+
 app.post('/sign-auth-v2', jsonParser, (req, res) => {
+  res.set({'Access-Control-Allow-Origin': 'http://localhost:8080'})
   const stringToSign = req.body.stringToSign;
 
   if (!stringToSign) {
@@ -20,6 +22,7 @@ app.post('/sign-auth-v2', jsonParser, (req, res) => {
 });
 
 app.post('/sign-auth-v4', jsonParser, (req, res) => {
+  res.set({'Access-Control-Allow-Origin': 'http://localhost:8080'})
   const stringToSign = req.body.stringToSign;
 
   if (!stringToSign) {

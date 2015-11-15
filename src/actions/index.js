@@ -24,10 +24,10 @@ export function initiateUpload() {
 }
 
 function signRequest() {
-  console.log('signReq');
   request({
     method: 'POST',
-    url: 'http://localhost:3000/sign-auth-v4'
+    url: 'http://localhost:3000/sign-auth-v4',
+    body: 'stringToSign'
   })
   .then(response => console.log(response))
   .catch(() => console.log('error'));

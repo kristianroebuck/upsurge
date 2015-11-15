@@ -11,7 +11,7 @@ export default function request(args) {
         .forEach(key => xhr.setRequestHeader(key, args.headers[key]));
     }
 
-    xhr.send();
+    xhr.send(args.body);
 
     xhr.onload = () => {
       if (xhr.status >= 200 && xhr.status < 300) {
