@@ -24,9 +24,11 @@ export function initiateUpload() {
 }
 
 function signRequest() {
+  console.log('signReq');
   request({
     method: 'POST',
     url: 'http://localhost:8080/sign-auth-v4'
   })
-  .then(response => console.log(response));
+  .then(response => console.log(response))
+  .catch(() => console.log('error'));
 }
