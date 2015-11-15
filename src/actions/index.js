@@ -18,6 +18,7 @@ export function addFile(file, fileName) {
 
 export function initiateUpload() {
   return (dispatch, getState) => {
-    console.log('starting upload');
+
+    console.log('starting upload', getState());
   };
 }
