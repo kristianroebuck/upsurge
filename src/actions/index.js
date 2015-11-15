@@ -27,7 +27,7 @@ function signRequest() {
   console.log('signReq');
   request({
     method: 'POST',
-    url: 'http://localhost:8080/sign-auth-v4'
+    url: 'http://localhost:3000/sign-auth-v4'
   })
   .then(response => console.log(response))
   .catch(() => console.log('error'));
