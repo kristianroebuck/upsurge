@@ -1,3 +1,4 @@
+import request from '../utils/request';
 import * as types from '../constants/action-types';
 
 
@@ -18,7 +19,14 @@ export function addFile(file, fileName) {
 
 export function initiateUpload() {
   return (dispatch, getState) => {
-
-    console.log('starting upload', getState());
+    signRequest();
   };
+}
+
+function signRequest() {
+  request({
+    method: 'POST',
+    url: 'http://localhost:8080/sign-auth-v4'
+  })
+  .then(response => console.log(response));
 }

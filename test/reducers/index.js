@@ -6,7 +6,7 @@ import * as types from '../../src/constants/action-types';
 
 // File tests
 test('UNKNOWN type returns the same state', assert => {
-  const expected = [];
+  const expected = {};
   const action = { type: types.UNKNOWN };
   const actual = file(expected, action);
 
@@ -14,23 +14,19 @@ test('UNKNOWN type returns the same state', assert => {
   assert.end();
 });
 
-// test('ADD_FILE', assert => {
-//   const fileName = 'my-file.mp3';
-//   const files = 'my-file';
-//   const expected = [{
-//     file,
-//     fileName
-//   }];
-//   const action = {
-//     type: types.ADD_FILE,
-//     file: files,
-//     fileName
-//   };
-//   const actual = file(expected, action);
-//
-//   assert.deepEqual(actual, expected);
-//   assert.end();
-// });
+test('ADD_FILE', assert => {
+  const fileName = 'my-file.mp3';
+  const file = 'my-file';
+  const action = {
+    type: types.ADD_FILE,
+    file: files,
+    fileName
+  };
+  const actual = file({}, action);
+
+  assert.deepEqual(actual, action);
+  assert.end();
+});
 
 // Upsurge tests
 test('When an unknown type passed to the upsurge reducer the same state is returned', assert => {

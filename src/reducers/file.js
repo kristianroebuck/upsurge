@@ -6,14 +6,14 @@ import * as types from '../constants/action-types';
 //  progress: '0.2',
 //
 // }
-export default function file(state = [], action) {
+export default function file(state = {}, action) {
   switch (action.type) {
     case types.ADD_FILE:
       console.log('adding file', action.file, action.fileName);
-      return [{
+      return {
         fileName: action.fileName,
         file: action.file
-      }, ...state];
+      };
     default:
       return state;
   }
