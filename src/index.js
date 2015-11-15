@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import * as actions from './actions';
 import reducers from './reducers';
 
@@ -15,7 +16,6 @@ const upsurge = ({
     return false;
   }
 
-
   function addFile({
       fileName = undefined,
       file = undefined
@@ -26,16 +26,20 @@ const upsurge = ({
       return false;
     }
 
-    return store.dispatch(actions.addFile('hello', 'hello'));
+    return store.dispatch(actions.addFile(file, fileName));
   }
 
-  const store = createStore(reducers);
-  store.dispatch(actions.initiate({
+  function upload() {
+    store.dispatch(actions.initiateUpload());
+  }
 
-  }));
+  const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+  const store = createStoreWithMiddleware(reducers);
+  store.dispatch(actions.initiate());
 
   return {
-    addFile
+    addFile,
+    upload
   };
 };
 

@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       fileName: input.files[0].name
     });
 
+    up.upload();
+
   });
 
 });

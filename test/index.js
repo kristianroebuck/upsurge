@@ -117,3 +117,18 @@ test('addFile returns false if no parameters are supplied', assert => {
   assert.equal(actual, expected);
   assert.end();
 });
+
+// Upload tests
+// ============
+
+test('Upsurge reveals an upload function', assert => {
+  const actual = typeof upsurge({
+    signUrl: '/sign-auth',
+    bucketName: 'bucketName',
+    awsAccessId: 'AKIA4HJ709DF87HI'
+  }).upload;
+  const expected = 'function';
+
+  assert.equal(actual, expected);
+  assert.end()
+});

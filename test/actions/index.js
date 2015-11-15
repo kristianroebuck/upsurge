@@ -16,16 +16,16 @@ test('addFile action returns an object containing an action type and a file', as
   assert.end();
 });
 
-test('cancelUpload action returns an object containing an action type and an id', assert => {
-  const id = 3;
-  const expectedAction = {
-    type: types.CANCEL_UPLOAD,
-    id
-  };
-
-  assert.deepEqual(actions.cancelUpload(id), expectedAction);
-  assert.end();
-});
+// test('cancelUpload action returns an object containing an action type and an id', assert => {
+//   const id = 3;
+//   const expectedAction = {
+//     type: types.CANCEL_UPLOAD,
+//     id
+//   };
+//
+//   assert.deepEqual(actions.cancelUpload(id), expectedAction);
+//   assert.end();
+// });
 
 test('initiateUpload action returns an object containing an action type', assert => {
   const expectedAction = {

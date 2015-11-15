@@ -25,7 +25,8 @@
     "url": "git+https://github.com/kristianroebuck/upsurge.git"
   },
   "dependencies": {
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^6.1.18",

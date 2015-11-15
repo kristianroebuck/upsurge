@@ -1,6 +1,13 @@
 import * as types from '../constants/action-types';
 
 
+export function initiate(options) {
+  return {
+    type: types.INITIATE,
+    options
+  };
+}
+
 export function addFile(file, fileName) {
   return {
     type: types.ADD_FILE,
@@ -10,21 +17,7 @@ export function addFile(file, fileName) {
 }
 
 export function initiateUpload() {
-  return {
-    type: types.INITIATE_UPLOAD
-  };
-}
-
-export function cancelUpload(id) {
-  return {
-    type: types.CANCEL_UPLOAD,
-    id
-  };
-}
-
-export function initiate(options) {
-  return {
-    type: types.INITIATE,
-    options
+  return (dispatch, getState) => {
+    console.log('starting upload');
   };
 }
