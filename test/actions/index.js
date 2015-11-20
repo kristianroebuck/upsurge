@@ -16,24 +16,13 @@ test('addFile action returns an object containing an action type and a file', as
   assert.end();
 });
 
-// test('cancelUpload action returns an object containing an action type and an id', assert => {
-//   const id = 3;
+// test('initiateUpload action returns an object containing an action type', assert => {
 //   const expectedAction = {
-//     type: types.CANCEL_UPLOAD,
-//     id
+//     type: types.INITIATE_UPLOAD
 //   };
-//
-//   assert.deepEqual(actions.cancelUpload(id), expectedAction);
+//   assert.deepEqual(actions.initiateUpload(), expectedAction);
 //   assert.end();
 // });
-
-test('initiateUpload action returns an object containing an action type', assert => {
-  const expectedAction = {
-    type: types.INITIATE_UPLOAD
-  };
-  assert.deepEqual(actions.initiateUpload(), expectedAction);
-  assert.end();
-});
 
 test('initiate action returns type `types.INITIATE and the options object', assert => {
   const signUrl = '/sign-auth';

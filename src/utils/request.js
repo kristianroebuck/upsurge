@@ -5,6 +5,7 @@ export default function request(args) {
     const xhr = new XMLHttpRequest();
 
     xhr.open(args.method, args.url);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
     if (args.headers) {
       Object.keys(args.headers)

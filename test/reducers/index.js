@@ -1,6 +1,6 @@
 import test from 'tape';
 import upsurge from '../../src/reducers/upsurge';
-import file from '../../src/reducers/file';
+import fileReducer from '../../src/reducers/file';
 import * as types from '../../src/constants/action-types';
 
 
@@ -8,23 +8,23 @@ import * as types from '../../src/constants/action-types';
 test('UNKNOWN type returns the same state', assert => {
   const expected = {};
   const action = { type: types.UNKNOWN };
-  const actual = file(expected, action);
+  const actual = fileReducer(expected, action);
 
   assert.deepEqual(actual, expected);
   assert.end();
 });
 
 test('ADD_FILE', assert => {
-  const fileName = 'my-file.mp3';
   const file = 'my-file';
-  const action = {
-    type: types.ADD_FILE,
-    file: files,
-    fileName
-  };
-  const actual = file({}, action);
+  const fileName = 'my-file.mp3';
+  const expected = {file, fileName};
+  const action = Object.assign({},
+    {file, fileName},
+    {type: types.ADD_FILE}
+  );
+  const actual = fileReducer({}, action);
 
-  assert.deepEqual(actual, action);
+  assert.deepEqual(actual, expected);
   assert.end();
 });
 

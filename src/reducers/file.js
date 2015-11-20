@@ -9,11 +9,11 @@ import * as types from '../constants/action-types';
 export default function file(state = {}, action) {
   switch (action.type) {
     case types.ADD_FILE:
-      console.log('adding file', action.file, action.fileName);
       return {
         fileName: action.fileName,
         file: action.file
       };
+
     default:
       return state;
   }

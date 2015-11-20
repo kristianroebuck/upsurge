@@ -9,9 +9,7 @@ import {
 const app = express();
 const jsonParser = bodyParser.json();
 
-
 app.post('/sign-auth-v2', jsonParser, (req, res) => {
-  res.set({'Access-Control-Allow-Origin': 'http://localhost:8080'})
   const stringToSign = req.body.stringToSign;
 
   if (!stringToSign) {
@@ -22,13 +20,15 @@ app.post('/sign-auth-v2', jsonParser, (req, res) => {
 });
 
 app.post('/sign-auth-v4', jsonParser, (req, res) => {
-  res.set({'Access-Control-Allow-Origin': 'http://localhost:8080'})
   const stringToSign = req.body.stringToSign;
 
   if (!stringToSign) {
     res.status(400).send('Did not recieve a string to sign');
   } else {
-    res.send(computeS3SignatureV4(stringToSign));
+    res.set({
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*'
+    }).send(computeS3SignatureV4(stringToSign));
   }
 });
 
