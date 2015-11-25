@@ -11,6 +11,11 @@ export default function upsurge(state = {}, action) {
         awsAccessId: action.awsAccessId
       };
 
+    case types.SIGN_REQUEST_SUCCESS:
+      return {
+        signature: action.signature
+      };
+
     default:
       return state;
   }

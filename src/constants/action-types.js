@@ -6,3 +6,6 @@ export const CANCEL_UPLOAD = 'CANCEL_UPLOAD';
 
 // Upserge Reducer
 export const INITIATE = 'INITIATE';
+
+export const SIGN_REQUEST_SUCCESS = 'SIGN_REQUEST_SUCCESS';
+export const SIGN_REQUEST_FAILURE = 'SIGN_REQUEST_FAILURE';

@@ -59,3 +59,16 @@ test('upsurge reducer INITIATE action', assert => {
   assert.deepEqual(actual, expected);
   assert.end();
 });
+
+test('SIGN_REQUEST_SUCCESS action adds a signature to the store', assert => {
+  const signature = '20345987kjfgh09t23h03f9rhf308';
+  const action = {
+    type: types.SIGN_REQUEST_SUCCESS,
+    signature
+  };
+  const actual = upsurge({}, action);
+  const expected = {signature};
+
+  assert.deepEqual(actual, expected);
+  assert.end();
+});

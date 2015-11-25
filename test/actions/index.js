@@ -6,13 +6,14 @@ import * as actions from '../../src/actions';
 test('addFile action returns an object containing an action type and a file', assert => {
   const file = 'my-file.mp4';
   const fileName = 'my-file.mp4';
+  const actual = actions.addFile(file, fileName);
   const expected = {
     type: types.ADD_FILE,
     file,
     fileName
   };
 
-  assert.deepEqual(actions.addFile(file, fileName), expected);
+  assert.deepEqual(actual, expected);
   assert.end();
 });
 
@@ -42,6 +43,27 @@ test('initiate action returns type `types.INITIATE and the options object', asse
     }
   };
 
+  assert.deepEqual(actual, expected);
+  assert.end();
+});
+
+test('signRequestFailure() returns an object containing a type of SIGN_REQUEST_FAILURE and an error', assert => {
+  const actual = actions.signRequestFailure();
+  const expected = {
+    type: types.SIGN_REQUEST_FAILURE,
+    error: true
+  };
+  assert.deepEqual(actual, expected);
+  assert.end();
+});
+
+test('signRequestSuccess() returns an object containing a type of SIGN_REQUEST_SUCCESS and a signature', assert => {
+  const signature = '93857207023498572002345987';
+  const actual = actions.signRequestSuccess(signature);
+  const expected = {
+    type: types.SIGN_REQUEST_SUCCESS,
+    signature
+  };
   assert.deepEqual(actual, expected);
   assert.end();
 });

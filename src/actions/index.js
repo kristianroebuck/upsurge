@@ -23,7 +23,7 @@ export function initiateUpload() {
   };
 }
 
-function signRequest() {
+export function signRequest() {
   const stringToSign = 'POST \n';
 
   request({
@@ -31,6 +31,22 @@ function signRequest() {
     url: 'http://localhost:3000/sign-auth-v4',
     body: JSON.stringify({stringToSign})
   })
-  .then(response => console.log(response))
+  .then(response => JSON.parse(response))
+  .then(signature => signature.signature)
+  .then(signature => dispatch(signRequestSuccess(signature)))
   .catch(() => console.log('error'));
+}
+
+export function signRequestSuccess(signature) {
+  return {
+    type: types.SIGN_REQUEST_SUCCESS,
+    signature
+  };
+}
+
+export function signRequestFailure() {
+  return {
+    type: types.SIGN_REQUEST_FAILURE,
+    error: true
+  };
 }
