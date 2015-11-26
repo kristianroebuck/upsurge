@@ -17,6 +17,12 @@ export default function upsurge(state = {}, action) {
         signature: action.signature
       };
 
+    case types.SIGN_REQUEST_FAILURE:
+      return {
+        ...state,
+        error: true
+      };
+
     default:
       return state;
   }

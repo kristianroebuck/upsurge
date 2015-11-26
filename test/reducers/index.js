@@ -72,3 +72,17 @@ test('SIGN_REQUEST_SUCCESS action adds a signature to the store', assert => {
   assert.deepEqual(actual, expected);
   assert.end();
 });
+
+test('SIGN_REQUEST_FAILURE action adds an error message to the store', assert => {
+  const action = {
+    type: types.SIGN_REQUEST_FAILURE,
+    error: true
+  };
+  const actual = upsurge({}, action);
+  const expected = {
+    error: true
+  };
+
+  assert.deepEqual(actual, expected);
+  assert.end();
+});
