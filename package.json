@@ -3,17 +3,17 @@
   "version": "0.0.0",
   "description": "Modern S3 file uploader",
   "license": "ISC",
-  "main": "lib/index.js",
+  "main": "lib/upsurge.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "example": "cd example && npm start && npm run server",
     "lint": "eslint src test",
     "postinstall": "babel src --out-dir lib",
     "start": "npm run update && npm run example && watch 'npm t && npm run lint' ./src ./test",
-    "test": "babel-tape-runner test/** test/**/** | tap-dot",
-    "test:cov": "babel-node node_modules/.bin/isparta cover --report text --report html test/**",
-    "update": "cd example && npm un upsurge && npm i kristianroebuck/upsurge",
-    "updtr": "updtr"
+    "test": "babel-tape-runner test/index.js | tap-dot",
+    "test:cov": "babel-node node_modules/.bin/isparta cover --report text --report html test/index.js",
+    "updater": "cd example && npm un upsurge && npm i kristianroebuck/upsurge",
+    "update": "updtr"
   },
   "keywords": [
     "s3",

@@ -2,10 +2,10 @@ const webpack = require('webpack');
 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/upsurge.js',
   output: {
     path: __dirname,
-    filename: 'dist/index.js'
+    filename: 'dist/upsurge.js'
   },
   module: {
     loaders: [{
