@@ -1,4 +1,6 @@
 import test from 'tape';
+import nock from 'nock';
+import { mockStore } from '../utils/mock-store';
 import * as types from '../../src/constants/action-types';
 import * as actions from '../../src/actions';
 
@@ -16,14 +18,6 @@ test('addFile action returns an object containing an action type and a file', as
   assert.deepEqual(actual, expected);
   assert.end();
 });
-
-// test('initiateUpload action returns an object containing an action type', assert => {
-//   const expectedAction = {
-//     type: types.INITIATE_UPLOAD
-//   };
-//   assert.deepEqual(actions.initiateUpload(), expectedAction);
-//   assert.end();
-// });
 
 test('initiate action returns type `types.INITIATE and the options object', assert => {
   const signUrl = '/sign-auth';
@@ -46,6 +40,21 @@ test('initiate action returns type `types.INITIATE and the options object', asse
   assert.deepEqual(actual, expected);
   assert.end();
 });
+
+// test('signRequest()...', assert => {
+//   const signature = '1A2B3C4D5E6F';
+//   const action = {
+//       type: types.SIGN_REQUEST_SUCCESS,
+//       signature
+//   }
+//   nock('http://localhost:3000')
+//     .post('/sign-auth-v4')
+//     .reply(200, {signature});
+//
+//     const expectedActions = [action];
+//     const store = mockStore({}, expectedActions, assert);
+//     store.dispatch(actions.signRequest());
+// });
 
 test('signRequestFailure() returns an object containing a type of SIGN_REQUEST_FAILURE and an error', assert => {
   const actual = actions.signRequestFailure();

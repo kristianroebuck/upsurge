@@ -2,18 +2,18 @@ import test from 'tape';
 import { applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-
 const middlewares = [ thunk ];
 
 /**
  * Creates a mock of Redux store with middleware.
  */
-export function mockStore(getState, expectedActions, end) {
+export function mockStore(getState, expectedActions, assert) {
+
   if (!Array.isArray(expectedActions)) {
     throw new Error('expectedActions should be an array of expected actions.');
   }
-  if (typeof end !== 'undefined' && typeof done !== 'function') {
-    throw new Error('end should either be undefined or function.');
+  if (typeof assert.end !== 'undefined' && typeof assert.end !== 'function') {
+    throw new Error('assert.end should either be undefined or function.');
   }
 
   function mockStoreWithoutMiddleware() {
@@ -26,14 +26,13 @@ export function mockStore(getState, expectedActions, end) {
         const expectedAction = expectedActions.shift();
 
         try {
-          // Change this for tape
-          expect(action).toEqual(expectedAction);
-          if (end && !expectedActions.length) {
-            end();
+          assert.deepEqual(action, expectedAction);
+          if (!expectedActions.length) {
+            assert.end();
           }
           return action;
         } catch (e) {
-          end(e);
+          assert.end(e);
         }
       }
     }
