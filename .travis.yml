@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-  - "4.2.6"
-  - "5.5.0"
+  - "6.11.0"
 
 repo_token: dgr9slF4rakVxkXrBbvz70F5HwieInBFA
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
