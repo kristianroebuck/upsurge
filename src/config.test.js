@@ -1,1 +1,0 @@
-import getConfig from './config';

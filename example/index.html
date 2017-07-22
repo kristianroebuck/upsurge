@@ -1,5 +1,15 @@
 <html>
   <title>Upsurge</title>
   <h1>Upsurge</h1>
+  <input type="file" />
+
   <script src="../dist/upsurge.js"></script>
+
+  <script>
+    x = upsurge({ bucket: 'yolo' });
+  document.addEventListener('change', function(e) {
+    console.log('change', e.target.files);
+    x.addFile(e.target.files);
+  });
+  </script>
 </html>

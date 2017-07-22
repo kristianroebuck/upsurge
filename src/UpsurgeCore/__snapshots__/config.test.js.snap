@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getConfig should return a full set of configuration options 1`] = `
+Object {
+  "awsKey": undefined,
+  "awsRegion": "us-east-1",
+  "bucket": undefined,
+  "s3BaseUrl": "https://undefined.s3.amazonaws.com/",
+  "signerUrl": undefined,
+}
+`;

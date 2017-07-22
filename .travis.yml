@@ -1,6 +1,15 @@
 language: node_js
 node_js:
-  - "6.11.0"
+  - "6"
+
+before_install:
+  - npm i -g npm@5.3.0
+
+cache:
+  directories:
+    - "node_modules"
+
+script: test:coverage
 
 repo_token: dgr9slF4rakVxkXrBbvz70F5HwieInBFA
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
