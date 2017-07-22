@@ -9,7 +9,7 @@ cache:
   directories:
     - "node_modules"
 
-script: test:coverage
+script: npm run test:coverage
 
 repo_token: dgr9slF4rakVxkXrBbvz70F5HwieInBFA
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
