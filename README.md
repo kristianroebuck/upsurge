@@ -2,7 +2,7 @@
 
 > A modern multipart S3 file uploader. Please note, there is nothing of any value here just yet.
 
-[![Build Status](https://travis-ci.org/kristianroebuck/upsurge.svg)](https://travis-ci.org/kristianroebuck/upsurge) [![Dependencies](https://david-dm.org/kristianroebuck/upsurge.svg)](https://david-dm.org/kristianroebuck/upsurge.svg) [![Coverage Status](https://coveralls.io/repos/kristianroebuck/uploadr/badge.svg?branch=master&service=github)](https://coveralls.io/github/kristianroebuck/uploadr?branch=master)
+[![CircleCI](https://circleci.com/gh/roebuk/upsurge/tree/master.svg?style=svg)](https://circleci.com/gh/roebuk/upsurge/tree/master) [![Dependencies](https://david-dm.org/kristianroebuck/upsurge.svg)](https://david-dm.org/kristianroebuck/upsurge.svg) [![Coverage Status](https://coveralls.io/repos/kristianroebuck/uploadr/badge.svg?branch=master&service=github)](https://coveralls.io/github/kristianroebuck/uploadr?branch=master)
 
 
 ### Installation
@@ -32,5 +32,5 @@ There's a full working [example](https://github.com/kristianroebuck/upsurge/tree
 
 ### Change Log
 
-This project adheres to [Semantic Versioning](http://semver.org/).  
+This project adheres to [Semantic Versioning](http://semver.org/).
 Every release, along with the migration instructions, is documented on the Github [Releases](https://github.com/kristianroebuck/upsurge/releases) page.
